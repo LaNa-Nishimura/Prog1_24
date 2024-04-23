@@ -7,6 +7,7 @@ namespace _240401_01.Models
 {
     public class OrderItem
     {
+        public int IdOrderItem { get;set; }
         public Product Product { get;set; }
         public double Quantity { get;set; }
         public double PurchasePrice { get;set; }
