@@ -19,7 +19,7 @@ namespace _240401_01.Models
         public string ZipCode { get; set; }
         public string City { get; set; }
         public string FederalState { get; set; }
-        public string Contry { get; set; }
+        public string Country { get; set; }
         public bool IsDefault { get; set; }
 
         public Customer Customer { get; set; }
