@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Win32.SafeHandles;
@@ -11,8 +12,9 @@ namespace _240401_01.Models
         public int CustomerId { get;set; }
         public string Name { get;set; }
         public string EmailAddress { get;set; }
-        public List<Address> Addresses { get; set; }
-
+        public List<Address> Addresses { get; set; } = new List<Address>();
+        
+        /*
         public Customer() {
             
         }
@@ -36,6 +38,6 @@ namespace _240401_01.Models
 
         public void Save(Customer customer) {
 
-        }
+        } */
     }
 }
