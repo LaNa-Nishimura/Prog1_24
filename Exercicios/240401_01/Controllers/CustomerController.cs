@@ -25,5 +25,9 @@ namespace _240401_01.Controllers
         public List<Customer> Get() {
             return customerRepository.Retrieve();
         }
+
+        public List<Customer> GetByName(string name) {
+            return customerRepository.RetrieveByName(name);
+        }
     }
 }

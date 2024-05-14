@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using _240401_01.Models;
 using _240401_01.Data;
+using System.ComponentModel;
 
 namespace _240401_01.Repository
 {
     public class CustomerRepository
     {
         public void Save(Customer customer) {
+            customer.CustomerId = this.GetNextId();
             DataSet.Customers.Add(customer);
         }
 
@@ -26,6 +28,17 @@ namespace _240401_01.Repository
             return DataSet.Customers;
         }
 
+        public List<Customer> RetrieveByName(string name) {
+            List<Customer> retorno = new List<Customer>();
+            foreach (var c in DataSet.Customers) {
+                if(c.Name.Contains(name)) {
+                    retorno.Add(c);
+                }
+            }
+
+            return retorno;
+        }
+
         private int GetNextId() {
             int n = 0;
             foreach(var c in DataSet.Customers) {
@@ -34,7 +47,7 @@ namespace _240401_01.Repository
                 }
             }
 
-            return n++;
+            return ++n;
         }
     }
 }
